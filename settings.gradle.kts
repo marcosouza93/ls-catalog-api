@@ -1,2 +1,8 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+    }
+}
+
 rootProject.name = "ls-catalog-api"
-include("application")
+include("domain", "application")
