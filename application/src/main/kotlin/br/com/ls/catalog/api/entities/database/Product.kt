@@ -4,50 +4,26 @@ import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.Id
 import org.springframework.data.annotation.LastModifiedDate
 import org.springframework.data.mongodb.core.mapping.Document
-import org.springframework.data.mongodb.core.mapping.Field
 import java.math.BigDecimal
 import java.time.LocalDate
 import br.com.ls.catalog.api.entities.model.Product as ProductModel
 
-@Document("produto")
+@Document
 data class Product(
-
         @Id
         val id: Long,
-
-        @Field("nomeProduto")
         val name: String,
-
-        @Field("codigoSKU")
         val sku: String,
-
-        @Field("valorUnitario")
         val unitPrice: BigDecimal,
-
-        @Field("imagem")
         val thumbUrl: String,
-
-        @Field("tipoProduto")
         val itemType: String, // TODO
-
-        @Field("produtoAtivo")
         val active: Boolean,
-
-        @Field("permiteVendaPessoaFisica")
         val allowedSaleToPerson: Boolean,
-
-        @Field("permiteVendaPessoaJuridica")
         val allowedSaleToCompany: Boolean,
-
-        @Field("qtdMaxParcelas")
         val installmentsMaxNumber: Int,
-
         @CreatedDate
-        @Field("dataCriacao")
         val createdAt: LocalDate,
-
         @LastModifiedDate
-        @Field("dataAtualizacao")
         val updatedAt: LocalDate
 ) {
         companion object {

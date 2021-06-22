@@ -1,9 +1,8 @@
 spring:
   data:
     mongodb:
-      database: catalogDB
-      host: localhost
-      port: 27017
+      uri: mongodb+srv://app:${db.pass}@${db.host}?retryWrites=true&w=majority
+      database: ${db.name}
 
 server:
   port: 8081
