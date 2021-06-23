@@ -1,8 +1,6 @@
 package br.com.ls.catalog.api.entities.database
 
-import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.Id
-import org.springframework.data.annotation.LastModifiedDate
 import org.springframework.data.mongodb.core.mapping.Document
 import java.math.BigDecimal
 import java.time.LocalDate
@@ -21,9 +19,7 @@ data class Product(
         val allowedSaleToPerson: Boolean,
         val allowedSaleToCompany: Boolean,
         val installmentsMaxNumber: Int,
-        @CreatedDate
         val createdAt: LocalDate,
-        @LastModifiedDate
         val updatedAt: LocalDate
 ) {
         companion object {
